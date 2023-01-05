@@ -9,7 +9,7 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 
 import { format } from 'date-fns';
 
-const Header = () => {
+const Header = ({type}) => {
 
     // react-date-range:
     const [date, setDate] = useState([
@@ -80,6 +80,8 @@ const Header = () => {
 
                 </div>
 
+                { type !== "list" &&
+                <> 
                 <h1 className="headerTitle">A lifetime of discounts? Its Genius.</h1>
                 <p className="headerDesc">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. A sint quaerat quam quasi asperiores consequatur voluptatum qui
@@ -143,7 +145,9 @@ const Header = () => {
                         <button className="headerBtn">Search</button>
                     </div>
 
-                </div>
+                </div> 
+                </>
+                }
 
 
 
