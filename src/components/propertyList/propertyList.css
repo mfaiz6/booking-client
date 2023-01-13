@@ -1,3 +1,4 @@
+
 .pList {
     width: 100%;
     max-width: 1024px;
@@ -20,7 +21,9 @@
 }
 
 .pListTitles>h1 {
-    font-size: 18px;
+    font-size: 18px; 
+    color: #444;
+    text-transform: capitalize;
 }
 
 .pListTitles>h2 {

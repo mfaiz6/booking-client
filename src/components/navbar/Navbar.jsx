@@ -1,5 +1,6 @@
 import './navbar.css'
 import logo from '../../images/logo.png'
+import { Link } from 'react-router-dom'
 const Navbar = () => {
   return (
 
@@ -7,7 +8,9 @@ const Navbar = () => {
 
       <div className="navContainer">
 
-        <span className="logo"><img src={logo} alt="" /></span>
+        <Link to="/">
+          <span className="logo"><img src={logo} alt="" /></span>
+        </Link>
 
         <div className="navItems">
           <button className="navButton">Register</button>
