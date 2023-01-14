@@ -10,6 +10,7 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import { format } from 'date-fns';
 import { useNavigate } from 'react-router-dom';
 import { SearchContext } from '../../context/SearchContext';
+import { AuthContext } from '../../context/AuthContext';
 
 const Header = ({ type }) => {
 
@@ -52,6 +53,9 @@ const Header = ({ type }) => {
 
     //Navigate using useNavigate hook to direct to any component/page
     const navigate = useNavigate()
+
+    //
+    const { user } = useContext(AuthContext)
 
     //Use context api to pass state
     const { dispatch } = useContext(SearchContext)
@@ -107,7 +111,7 @@ const Header = ({ type }) => {
                         <p className="headerDesc">
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. A sint quaerat quam quasi asperiores consequatur voluptatum qui
                         </p>
-                        <button className="headerBtn">Sign in/Register</button>
+                        {!user && <button className="headerBtn">Sign in/Register</button>}
 
 
                         {/* headerSearch */}
